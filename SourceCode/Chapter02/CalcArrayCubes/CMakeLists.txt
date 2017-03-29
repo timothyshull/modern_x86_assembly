@@ -1,0 +1,3 @@
+project(Chapter02_CalcArrayCubes)
+
+add_executable(CalcArrayCubes CalcArrayCubes.cpp)

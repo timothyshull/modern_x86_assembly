@@ -1,0 +1,143 @@
+cmake_minimum_required(VERSION 3.7)
+project(modern_x86_assembly_language_programming)
+
+set(CMAKE_CXX_STANDARD 11)
+
+include_directories(SourceCode/CommonFiles)
+
+add_subdirectory(SourceCode/AppendixA/Example1)
+add_subdirectory(SourceCode/AppendixA/Example2)
+add_subdirectory(SourceCode/AppendixA/Example3)
+add_subdirectory(SourceCode/AppendixA/Example4)
+
+add_subdirectory(SourceCode/Chapter02/CalcArrayCubes)
+add_subdirectory(SourceCode/Chapter02/CalcArraySquares)
+
+set(SOURCE_FILES
+        SourceCode/Chapter02/CalcArraySum/CalcArraySum.cpp
+        SourceCode/Chapter02/CalcMatrixCubes/CalcMatrixCubes.cpp
+        SourceCode/Chapter02/CalcMatrixRowColSums/CalcMatrixRowColSums.cpp
+        SourceCode/Chapter02/CalcMatrixRowColSums/CalcMatrixRowColSumsMisc.cpp
+        SourceCode/Chapter02/CalcStructSum/CalcStructSum.cpp
+        SourceCode/Chapter02/CalcStructSum/TestStruct.h
+        SourceCode/Chapter02/CalcSum/CalcSum.cpp
+        SourceCode/Chapter02/CalcSumTest/CalcSumTest.cpp
+        SourceCode/Chapter02/CallingConvention/CallingConvention.cpp
+        SourceCode/Chapter02/CompareArrays/CompareArrays.cpp
+        SourceCode/Chapter02/ConcatStrings/ConcatStrings.cpp
+        SourceCode/Chapter02/ConditionCodes/ConditionCodes.cpp
+        SourceCode/Chapter02/CountChars/CountChars.cpp
+        SourceCode/Chapter02/CreateStruct/CreateStruct.cpp
+        SourceCode/Chapter02/CreateStruct/TestStruct.h
+        SourceCode/Chapter02/IntegerAddition/IntegerAddition.cpp
+        SourceCode/Chapter02/IntegerMulDiv/IntegerMulDiv.cpp
+        SourceCode/Chapter02/MemoryAddressing/MemoryAddressing.cpp
+        SourceCode/Chapter02/ReverseArray/ReverseArray.cpp
+        SourceCode/Chapter04/CalcLeastSquares/CalcLeastSquares/CalcLeastSquares.cpp
+        SourceCode/Chapter04/CalcMeanStdev/CalcMeanStdev/CalcMeanStdev.cpp
+        SourceCode/Chapter04/CalcMinMax/CalcMinMax/CalcMinMax.cpp
+        SourceCode/Chapter04/CalcSphereAreaVolume/CalcSphereAreaVolume/CalcSphereAreaVolume.cpp
+        SourceCode/Chapter04/ConvertCoordinates/ConvertCoordinates/ConvertCoordinates.cpp
+        SourceCode/Chapter04/TemperatureConversions/TemperatureConversions/TemperatureConversions.cpp
+        SourceCode/Chapter06/MmxAddition/MmxAddition/MmxAddition.cpp
+        SourceCode/Chapter06/MmxCalcMean/MmxCalcMean/MmxCalcMean.cpp
+        SourceCode/Chapter06/MmxCalcMean/MmxCalcMean/MmxCalcMean.h
+        SourceCode/Chapter06/MmxCalcMean/MmxCalcMean/MmxCalcMeanTimed.cpp
+        SourceCode/Chapter06/MmxCalcMinMax/MmxCalcMinMax/MmxCalcMinMax.cpp
+        SourceCode/Chapter06/MmxCalcMinMax/MmxCalcMinMax/MmxCalcMinMax.h
+        SourceCode/Chapter06/MmxCalcMinMax/MmxCalcMinMax/MmxCalcMinMaxTimed.cpp
+        SourceCode/Chapter06/MmxMultiplication/MmxMultiplication/MmxMultiplication.cpp
+        SourceCode/Chapter06/MmxShift/MmxShift/MmxShift.cpp
+        SourceCode/Chapter08/SseScalarFloatingPointArithmetic/SseScalarFloatingPointArithmetic/SseScalarFloatingPointArithmetic.cpp
+        SourceCode/Chapter08/SseScalarFloatingPointCompare/SseScalarFloatingPointCompare/SseScalarFloatingPointCompare.cpp
+        SourceCode/Chapter08/SseScalarFloatingPointConversions/SseScalarFloatingPointConversions/SseScalarFloatingPointConversions.cpp
+        SourceCode/Chapter08/SseScalarFloatingPointParallelograms/SseScalarFloatingPointParallelograms/SseScalarFloatingPointParallelograms.cpp
+        SourceCode/Chapter08/SseScalarFloatingPointSpheres/SseScalarFloatingPointSpheres/SseScalarFloatingPointSpheres.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointArithmetic/SsePackedFloatingPointArithmetic/SsePackedFloatingPointArithmetic.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointCompare/SsePackedFloatingPointCompare/SsePackedFloatingPointCompare.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointConversions/SsePackedFloatingPointConversions/SsePackedFloatingPointConversions.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointLeastSquares/SsePackedFloatingPointLeastSquares/SsePackedFloatingPointLeastSquares.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4.h
+        SourceCode/Chapter09/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4Fig8-3.cpp
+        SourceCode/Chapter09/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4/SsePackedFloatingPointMatrix4x4Timed.cpp
+        SourceCode/Chapter10/SsePackedIntegerFundamentals/SsePackedIntegerFundamentals/SsePackedIntegerFundamentals.cpp
+        SourceCode/Chapter10/SsePackedIntegerHistogram/SsePackedIntegerHistogram/SsePackedIntegerHistogram.cpp
+        SourceCode/Chapter10/SsePackedIntegerHistogram/SsePackedIntegerHistogram/SsePackedIntegerHistogram.h
+        SourceCode/Chapter10/SsePackedIntegerHistogram/SsePackedIntegerHistogram/SsePackedIntegerHistogramTimed.cpp
+        SourceCode/Chapter10/SsePackedIntegerThreshold/SsePackedIntegerThreshold/SsePackedIntegerThreshold.cpp
+        SourceCode/Chapter10/SsePackedIntegerThreshold/SsePackedIntegerThreshold/SsePackedIntegerThreshold.h
+        SourceCode/Chapter10/SsePackedIntegerThreshold/SsePackedIntegerThreshold/SsePackedIntegerThresholdTimed.cpp
+        SourceCode/Chapter11/SseTextStringCalcLength/SseTextStringCalcLength/SseTextStringCalcLength.cpp
+        SourceCode/Chapter11/SseTextStringReplaceChar/SseTextStringReplaceChar/SseTextStringReplaceChar.cpp
+        SourceCode/Chapter13/AvxScalarFloatingPointArithmetic/AvxScalarFloatingPointArithmetic/AvxScalarFloatingPointArithmetic.cpp
+        SourceCode/Chapter13/AvxScalarFloatingPointCompare/AvxScalarFloatingPointCompare/AvxScalarFloatingPointCompare.cpp
+        SourceCode/Chapter13/AvxScalarFloatingPointQuadEqu/AvxScalarFloatingPointQuadEqu/AvxScalarFloatingPointQuadEqu.cpp
+        SourceCode/Chapter13/AvxScalarFloatingPointSpherical/AvxScalarFloatingPointSpherical/AvxScalarFloatingPointSpherical.cpp
+        SourceCode/Chapter14/AvxPackedFloatingPointArithmetic/AvxPackedFloatingPointArithmetic/AvxPackedFloatingPointArithmetic.cpp
+        SourceCode/Chapter14/AvxPackedFloatingPointColMeans/AvxPackedFloatingPointColMeans/AvxPackedFloatingPointColMeans.cpp
+        SourceCode/Chapter14/AvxPackedFloatingPointCompare/AvxPackedFloatingPointCompare/AvxPackedFloatingPointCompare.cpp
+        SourceCode/Chapter14/AvxPackedFloatingPointCorrCoef/AvxPackedFloatingPointCorrCoef/AvxPackedFloatingPointCorrCoef.cpp
+        SourceCode/Chapter15/AvxPackedIntegerArithmetic/AvxPackedIntegerArithmetic/AvxPackedIntegerArithmetic.cpp
+        SourceCode/Chapter15/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClip.cpp
+        SourceCode/Chapter15/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClip.h
+        SourceCode/Chapter15/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClip/AvxPackedIntegerPixelClipTimed.cpp
+        SourceCode/Chapter15/AvxPackedIntegerThreshold/AvxPackedIntegerThreshold/AvxPackedIntegerThreshold.cpp
+        SourceCode/Chapter15/AvxPackedIntegerThreshold/AvxPackedIntegerThreshold/AvxPackedIntegerThreshold.h
+        SourceCode/Chapter15/AvxPackedIntegerThreshold/AvxPackedIntegerThreshold/AvxPackedIntegerThresholdTimed.cpp
+        SourceCode/Chapter15/AvxPackedIntegerUnpack/AvxPackedIntegerUnpack/AvxPackedIntegerUnpack.cpp
+        SourceCode/Chapter16/AvxBlend/AvxBlend/AvxBlend.cpp
+        SourceCode/Chapter16/AvxBroadcast/AvxBroadcast/AvxBroadcast.cpp
+        SourceCode/Chapter16/AvxCpuid/AvxCpuid/AvxCpuid.cpp
+        SourceCode/Chapter16/AvxFma/AvxFma/AvxFma.cpp
+        SourceCode/Chapter16/AvxFma/AvxFma/AvxFma.h
+        SourceCode/Chapter16/AvxFma/AvxFma/AvxFmaTimed.cpp
+        SourceCode/Chapter16/AvxGather/AvxGather/AvxGather.cpp
+        SourceCode/Chapter16/AvxGprBitManip/AvxGprBitManip/AvxGprBitManip.cpp
+        SourceCode/Chapter16/AvxGprMulxShiftx/AvxGprMulxShiftx/AvxGprMulxShiftx.cpp
+        SourceCode/Chapter16/AvxPermute/AvxPermute/AvxPermute.cpp
+        SourceCode/Chapter18/CallingConvention1/CallingConvention1/CallingConvention1.cpp
+        SourceCode/Chapter18/CallingConvention2/CallingConvention2/CallingConvention2.cpp
+        SourceCode/Chapter18/CallingConvention3/CallingConvention3/CallingConvention3.cpp
+        SourceCode/Chapter18/CallingConvention4/CallingConvention4/CallingConvention4.cpp
+        SourceCode/Chapter18/ConcatStrings/ConcatStrings/ConcatStrings.cpp
+        SourceCode/Chapter18/FloatingPointArithmetic/FloatingPointArithmetic/FloatingPointArithmetic.cpp
+        SourceCode/Chapter18/IntegerArithmetic/IntegerArithmetic/IntegerArithmetic.cpp
+        SourceCode/Chapter18/IntegerOperands/IntegerOperands/IntegerOperands.cpp
+        SourceCode/Chapter18/MatrixMul/MatrixMul/MatrixMul.cpp
+        SourceCode/Chapter18/MemoryAddressing/MemoryAddressing/MemoryAddressing.cpp
+        SourceCode/Chapter20/Avx64CalcEllipsoid/Avx64CalcEllipsoid/Avx64CalcEllipsoid.cpp
+        SourceCode/Chapter20/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv.cpp
+        SourceCode/Chapter20/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv.h
+        SourceCode/Chapter20/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv/Avx64CalcMat4x4InvTest.cpp
+        SourceCode/Chapter20/Avx64CalcMat4x4Inv/Avx64CalcMat4x4Inv/Avx64CalcMat4x4InvTimed.cpp
+        SourceCode/Chapter20/Avx64CalcRgbMinMax/Avx64CalcRgbMinMax/Avx64CalcRgbMinMax.cpp
+        SourceCode/Chapter20/Avx64MiscInstructions/Avx64MiscInstructions/Avx64MiscInstructions.cpp
+        SourceCode/Chapter20/Sse64ImageConvert/Sse64ImageConvert/Sse64ImageConvert.cpp
+        SourceCode/Chapter20/Sse64ImageHistogram/Sse64ImageHistogram/Sse64ImageHistogram.cpp
+        SourceCode/Chapter20/Sse64ImageHistogram/Sse64ImageHistogram/Sse64ImageHistogram.h
+        SourceCode/Chapter20/Sse64ImageHistogram/Sse64ImageHistogram/Sse64ImageHistogramTimed.cpp
+        SourceCode/Chapter20/Sse64VectorArrays/Sse64VectorArrays/Sse64VectorArrays.cpp
+        SourceCode/Chapter20/Sse64VectorArrays/Sse64VectorArrays/Sse64VectorArrays.h
+        SourceCode/Chapter20/Sse64VectorArrays/Sse64VectorArrays/Sse64VectorArraysTimed.cpp
+        SourceCode/Chapter22/LinkedListPrefetch/LinkedListPrefetch.cpp
+        SourceCode/Chapter22/LinkedListPrefetch/LinkedListPrefetch.h
+        SourceCode/Chapter22/LinkedListPrefetch/LinkedListPrefetchTimed.cpp
+        SourceCode/Chapter22/NonTemporalStore/NonTemporalStore.cpp
+        SourceCode/Chapter22/NonTemporalStore/NonTemporalStore.h
+        SourceCode/Chapter22/NonTemporalStore/NonTemporalStoreTimed.cpp
+        SourceCode/CommonFiles/ImageBuffer.cpp
+        SourceCode/CommonFiles/ImageBuffer.h
+        SourceCode/CommonFiles/Mat4x4.cpp
+        SourceCode/CommonFiles/Mat4x4.h
+        SourceCode/CommonFiles/MiscDefs.h
+        SourceCode/CommonFiles/MmxVal.cpp
+        SourceCode/CommonFiles/MmxVal.h
+        SourceCode/CommonFiles/ThreadTimer.cpp
+        SourceCode/CommonFiles/ThreadTimer.h
+        SourceCode/CommonFiles/XmmVal.cpp
+        SourceCode/CommonFiles/XmmVal.h
+        SourceCode/CommonFiles/YmmVal.cpp
+        SourceCode/CommonFiles/YmmVal.h)
+
+add_executable(modern_x86_assembly_language_programming ${SOURCE_FILES})
