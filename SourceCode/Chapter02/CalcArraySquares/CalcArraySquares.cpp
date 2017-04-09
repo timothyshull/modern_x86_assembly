@@ -1,4 +1,3 @@
-
 #include <cstdio>
 
 extern "C" int CalcArraySquares_(int *y, const int *x, int n);
